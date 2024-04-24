@@ -1,4 +1,8 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
 
-createApp(App).mount('#app')
+const UserList = () => import("./components/UserList.vue");
+const app = createApp(App);
+
+app.component("async-component", UserList);
+app.mount("#app");
